@@ -12,7 +12,7 @@ public class Travessia {
         //Lê o Tamanho da Matriz, Cria e Preenche a Matriz com os valores do Arquivo.
         int n = scnnr.nextInt();
         M = new int[n][n];
-        Reader(scnnr, M);
+        Reader(scnnr);
         
         n--;//Garantir que a Função Não Saia do Tamanho da Matriz.
         
@@ -23,7 +23,7 @@ public class Travessia {
     }
 
     //Preenche a Matriz Com os Valores do Arquivo
-    public static void Reader(Scanner scnnr, int[][] M) {
+    public static void Reader(Scanner scnnr) {
         for (int i = 0; i < M.length; i++) {
             for (int j = 0; j < M.length; j++)
                 M[i][j] = scnnr.nextInt();
