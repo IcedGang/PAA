@@ -37,11 +37,13 @@ public class Travessia {
         if (i == 0 && j == 0)
             return 0;
 
-        //Caso esteja na primeira linha  [0][n]
+        //Caso esteja na primeira linha [0][n]
+        //Calcula o Gasto para Esquerda
         if (i == 0)
             return TravMin(0, j - 1) + Math.abs(M[0][j - 1] - M[0][j]);
 
         //Caso esteja na primeira coluna [n][0]
+        //Calcula o Gasto para Cima
         if (j == 0)
             return TravMin(i - 1, 0) + Math.abs(M[i - 1][0] - M[i][0]);
 
