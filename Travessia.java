@@ -7,7 +7,7 @@ public class Travessia {
     
     public static void main(String[] args) throws IOException {
         File path = new File("Matriz.txt");//Caminho para o Arquivo com as Alturas.
-        Scanner scnnr = new Scanner(path);// Lê do Arquivo.
+        Scanner scnnr = new Scanner(path);//Lê do Arquivo.
 
         //Lê o Tamanho da Matriz, Cria e Preenche a Matriz com os valores do Arquivo.
         int n = scnnr.nextInt();
