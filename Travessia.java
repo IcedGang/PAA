@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public class Travessia {
     public static int[][] M;//Matriz com as alturas.
+    
     public static void main(String[] args) throws IOException {
         File path = new File("Matriz.txt");//Caminho para o Arquivo com as Alturas.
         Scanner scnnr = new Scanner(path);// Lê do Arquivo.
