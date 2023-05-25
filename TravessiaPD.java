@@ -10,7 +10,7 @@ public class TravessiaPD {
         File path = new File("desniveis.txt");//Caminho para o Arquivo com as Alturas.
         Scanner scnnr = new Scanner(path);
         
-            //Lê o Tamanho das Matrizes, Cria e Preenche as Matriz M com os valores do Arquivo.
+        //Lê o Tamanho das Matrizes, Cria e Preenche as Matriz M com os valores do Arquivo.
         int n = scnnr.nextInt();
         M = new int[n][n];
         
