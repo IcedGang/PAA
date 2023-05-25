@@ -37,7 +37,7 @@ public class TravessiaPD {
 
     }
 
-    //Preenche a Matriz D Com MAX_VALUE;
+    //Preenche a Matriz D Com flag;
     public static void DReader() {
         for (int i = 0; i < D.length; i++) {
             for (int j = 0; j < D.length; j++)
