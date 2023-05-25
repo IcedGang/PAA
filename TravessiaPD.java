@@ -5,27 +5,27 @@ import java.io.IOException;
 public class TravessiaPD {
     public static int[][] M;//Matriz com as alturas.
     public static int[][] D;//Matriz que Armazena os Calculos da Diferença entre os Desníveis
-    public static final int flag = -1; //Flag para Saber Posições que já Foram Calculadas
 
     public static void main(String[] args) throws IOException {
         File path = new File("desniveis.txt");//Caminho para o Arquivo com as Alturas.
-        try (Scanner scnnr = new Scanner(path)) {
+        Scanner scnnr = new Scanner(path);
+        
             //Lê o Tamanho das Matrizes, Cria e Preenche as Matriz M com os valores do Arquivo.
-            int n = scnnr.nextInt();
-            M = new int[n][n];
-            
-            //Preenche a Matriz D
-            D = new int[n][n];
-            DReader();
-            
-            //Garantir que a Função Não Saia do Tamanho da Matriz.
-            n--;
-            
-            //Busca e Printa o Caminho com o Gasto Mínimo.
-            int min = TravMin(0, 0);
-            System.out.println(min);
-        }
-
+        int n = scnnr.nextInt();
+        M = new int[n][n];
+        
+        //Preenche a Matriz D
+        D = new int[n][n];
+        DReader();
+        
+        //Garantir que a Função Não Saia do Tamanho da Matriz.
+        n--;
+        
+        //Busca e Printa o Caminho com o Gasto Mínimo.
+        int min = TravMin(0, 0);
+        System.out.println(min);
+        
+        scnnr.close();
     }
 
     //Preenche a Matriz M Com os Valores do Arquivo
@@ -37,11 +37,11 @@ public class TravessiaPD {
 
     }
 
-    //Preenche a Matriz D Com flag;
+    //Preenche a Matriz D Com -1;
     public static void DReader() {
         for (int i = 0; i < D.length; i++) {
             for (int j = 0; j < D.length; j++)
-                D[i][j] = flag;
+                D[i][j] = -1;
         }
 
     }
@@ -60,12 +60,12 @@ public class TravessiaPD {
         //Caso esteja na primeira linha [0][n]
         //Calcula o Gasto Para Esquerda
         if (i == 0)
-            return TravMin(0, j - 1) + Math.abs(M[0][j - 1] - M[0][j]);
+            return TravMin(0, j - 1) + Math.abs(M[i][j] - M[i][j - 1]);
 
         //Caso esteja na primeira coluna [n][0]
         //Calcula o Gasto para cima
         if (j == 0)
-            return TravMin(i - 1, 0) + Math.abs(M[i - 1][0] - M[i][0]);
+            return TravMin(i - 1, 0) + Math.abs(M[i][j] - M[i - 1][j]);
 
         //k Calcula o Gasto para cima e q Calcula o Gasto Para Esquerda
         int k = TravMin(i - 1, j) + Math.abs(M[i][j] - M[i - 1][j]);
