@@ -75,8 +75,9 @@ public class GrafosDFS {
                 Visite(v);
             }
             
-            //Todos os Vértices Adjacentes de r Foram Visitados
-            Color[r] = 'P';
-        }
+        }            
+        
+        //Todos os Vértices Adjacentes de r Foram Visitados
+        Color[r] = 'P';
     }
 }
